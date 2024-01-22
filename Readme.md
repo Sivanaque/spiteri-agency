@@ -1,5 +1,7 @@
 # SpiteriAgency
 
+A fake estate agency for an homework, have fun with it :D
+
 ## For SQL
 ⚠ Mandatory for the website to work. ⚠
 
