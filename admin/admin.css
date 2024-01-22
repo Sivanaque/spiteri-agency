@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-form {
+    border: 1px #eaeaea solid;
+    box-shadow: 1px 1px 6px #eaeaea;
+    border-radius: 4px;
+    margin: 2rem;
+}
+
+.add-ad {
+    width: 400px;
+    height: auto;
+    padding: 1em;
+}
+
+.search-product {
+    margin-top: 1em;
+    height: 480px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0.6em;
+    margin-top: 0.8em;
+    text-align: center;
+}
+
+hr {
+    width: 90%;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -0.7em;
+}
+
+input {
+    margin-top: 1em;
+    padding: 7px;
+    border: 1px #bbc0c6 dotted;
+    border-radius: 4px;
+    margin-right: 2em;
+}
+
+label {
+    display: inline-flex;
+    width: 180px;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+input.submit {
+    padding: 0.6em;
+    margin-top: 1.7em;
+    margin-right: 0;
+    width: 310px;
+    border: none;
+    border-radius: 24px;
+    border-top-right-radius: 0px;
+    background-color: #2eca6a;
+    color: white;
+    font-size: 19px;
+    transition: all 0.2s ease;
+}
+
+input.submit:hover {
+    box-shadow: 0 0 20px #2eca6a;
+    cursor: pointer;
+}
+
+.action-admin {
+    padding: 0.6em;
+    margin-top: 1.7em;
+    margin-right: 0;
+    width: 310px;
+    border: none;
+    border-radius: 24px;
+    background-color: #EB5160;
+    color: white;
+    font-size: 19px;
+    transition: all 0.2s ease;
+}
+
+.action-admin:hover {
+    box-shadow: 0 0 20px #EB5160;
+    cursor: pointer;
+}
+
+.search-product input.submit {
+    margin-top: 1.5em;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* POST-ADMIN */
+
+#post-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-container {
+    margin-top: 1rem;
+}
