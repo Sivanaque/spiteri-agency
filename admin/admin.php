@@ -43,11 +43,12 @@ session_start();
 
         $answer = $request->fetch();
         if ($answer) {
-            if ($answer['level'] != 2) {
+            if ($answer['level'] == 0) {
                 echo '<h3 style="text-align: center";>Vous ne possédez pas les priviléges nécessaires.</h3>';
             } else {
                 $_SESSION['user'] = $user;
                 $_SESSION['passwd'] = $passwd;
+                $_SESSION['level'] = $answer['level'];
                 header('location: post-admin.php');
         }
     } else {
@@ -55,20 +56,7 @@ session_start();
     }
 }           
 ?>
-            <!--
-            <div class="body-form search-product">
-                <h1>Rechercher un produit</h1><hr>
-                    <form action="">
-                        <div class="des-form">
-                        <label for="designation">Rechercher : </label>
-                        <input type="text" name="designation" id="designation" required>
-                    </div>
-                    <div class="confirm">
-                        <input type="submit" class="submit" value="Valider">
-                    </div>
-                </div>
-            </div>
--->
+            
     </body>
 </html>
     

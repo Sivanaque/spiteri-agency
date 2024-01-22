@@ -16,13 +16,15 @@ body {
     border: 1px #eaeaea solid;
     box-shadow: 1px 1px 6px #eaeaea;
     border-radius: 4px;
-    margin: 2rem;
+    padding: 1rem;
+    width: 385px;
 }
 
 .add-ad {
     width: 400px;
     height: auto;
     padding: 1em;
+    margin: 2em;
 }
 
 .search-product {
@@ -80,7 +82,7 @@ input.submit {
 }
 
 input.submit:hover {
-    box-shadow: 0 0 20px #2eca6a;
+    padding: 0.7em;
     cursor: pointer;
 }
 
@@ -98,7 +100,7 @@ input.submit:hover {
 }
 
 .action-admin:hover {
-    box-shadow: 0 0 20px #EB5160;
+    padding: 0.7em;
     cursor: pointer;
 }
 

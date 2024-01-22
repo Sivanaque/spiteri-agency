@@ -20,9 +20,12 @@
 </div>
 
 
-<h1 class="name">Bienvenue, <?php echo $_SESSION['user']; ?> !</h1>
+<h1 class="name">Bienvenue, <?php echo $_SESSION['user'] . $_SESSION['level']; ?> !</h1>
 <hr style="width: 50%"/>
-    <div id="post-container">       
+<?php
+    if ($_SESSION['level'] == 2) {
+        echo '
+        <div id="post-container">       
         <div class="body-form add-ad">
             <h1>Administration</h1><hr>
             <form action="">
@@ -34,7 +37,12 @@
                 </div>
             </form>
         </div>
-        <div style="border-left:1px solid #000;height:450px;"></div><div id="post-container">      
+        <div style="border-left:1px solid #000;height:450px;">
+        ';
+    }
+?>
+</div>
+        <div id="post-container">      
         <div class="body-form add-ad">
             <h1>Ajouter une annonce</h1><hr>
             <form action="">
@@ -60,6 +68,10 @@
                 </div>
                 <div class="type-form">
                     <label for="type">Prix : </label>
+                    <input type="text" name="type" id="type" required>
+                </div>
+                <div class="type-form">
+                    <label for="type">Image (URL) : </label>
                     <input type="text" name="type" id="type" required>
                 </div>
                 <div class="confirm">
