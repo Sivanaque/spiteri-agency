@@ -2,6 +2,7 @@
 
 ## For SQL
 ⚠ Mandatory for the website to work. ⚠
+
 You'll find a sql script (in : ```/sql/agence.sql```) to create the database agency as well as the two tables for the users and property advertisments.
 
 If you would the plain script, here it is :
