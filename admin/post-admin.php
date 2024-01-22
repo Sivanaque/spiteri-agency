@@ -20,7 +20,7 @@
 </div>
 
 
-<h1 class="name">Bienvenue, <?php echo $_SESSION['user'] . $_SESSION['level']; ?> !</h1>
+<h1 class="name">Bienvenue, <?php echo $_SESSION['user']; ?> !</h1>
 <hr style="width: 50%"/>
 <?php
     if ($_SESSION['level'] == 2) {
@@ -40,44 +40,60 @@
         <div style="border-left:1px solid #000;height:450px;">
         ';
     }
+
 ?>
 </div>
         <div id="post-container">      
         <div class="body-form add-ad">
             <h1>Ajouter une annonce</h1><hr>
-            <form action="">
+            <form method="post">
                 <div class="des-form">
                     <label for="designation">Adresse : </label>
-                    <input type="text" name="designation" id="designation" required>
+                    <input type="text" name="address" id="address" required>
                 </div>
                 <div class="prix-form">
                     <label for="prix">Ville : </label>
-                    <input type="text" name="prix" id="prix" required>
+                    <input type="text" name="city" id="city" required>
                 </div>
                 <div class="stock-form">
                     <label for="stock">Code Postal : </label>
-                    <input type="text" name="stock" id="stock" required>
+                    <input type="text" name="zip" id="zip" required>
                 </div>
                 <div class="four-form">
                     <label for="fournisseur">Surface : </label>
-                    <input type="text" name="fournisseur" id="fournisseur" required>
+                    <input type="text" name="square" id="square" required>
                 </div>
                 <div class="type-form">
                     <label for="type">Nombres de pièces : </label>
-                    <input type="text" name="type" id="type" required>
+                    <input type="text" name="rooms" id="rooms" required>
                 </div>
                 <div class="type-form">
-                    <label for="type">Prix : </label>
-                    <input type="text" name="type" id="type" required>
+                    <label for="type">Prix (Louer) : </label>
+                    <input type="text" name="price" id="price" required>
                 </div>
                 <div class="type-form">
                     <label for="type">Image (URL) : </label>
-                    <input type="text" name="type" id="type" required>
+                    <input type="text" name="img" id="img" required>
                 </div>
                 <div class="confirm">
-                    <input type="submit" class="submit" value="Valider">
+                    <input type="submit" class="submit" name="submit" value="Valider">
                 </div>
             </form>
+            <?php
+            if (isset($_POST['submit'])) {
+                $address = $_POST['address'];
+                $city = $_POST['city'];
+                $zip = $_POST['zip'];
+                $square = $_POST['square'];
+                $rooms = $_POST['rooms'];
+                $price = $_POST['price'];
+                $img = $_POST['img'];
+                
+                    $request = $AgencyDB->prepare("INSERT INTO annonces ('img', 'address', 'city', 'cp', 'squarem', 'rooms', 'price', 'id_u') values (?, ?, ?, ?, ?, ?, ?, ?)");
+                    $request->execute([$img, $address, $city, $zip, $square, $rooms, $price, $_SESSION['id_u']]);
+
+            }
+            ?>
         </div>
 </div>
 </body>
