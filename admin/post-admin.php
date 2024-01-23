@@ -88,10 +88,19 @@
                 $rooms = $_POST['rooms'];
                 $price = $_POST['price'];
                 $img = $_POST['img'];
-                
-                    $request = $AgencyDB->prepare("INSERT INTO annonces ('img', 'address', 'city', 'cp', 'squarem', 'rooms', 'price', 'id_u') values (?, ?, ?, ?, ?, ?, ?, ?)");
-                    $request->execute([$img, $address, $city, $zip, $square, $rooms, $price, $_SESSION['id_u']]);
+                $idu = $_SESSION['id_u'];
 
+                        $request = $AgencyDB->prepare('INSERT INTO annonces (address, city, cp, squarem, rooms, price, img, id_u) values (?, ?, ?, ?, ?, ?, ?, ?)');
+
+                        $tab = array($address, $city, $zip, $square, $rooms, $price, $img, $idu);
+                        $request->execute($tab);
+
+                        if ($request) {
+                            echo '<h3 style="text-align: center";>Votre annonce a était mise en ligne avec succès !</h3>';
+
+                        } else {
+                            echo '<h3 style="text-align: center";>Un problème est survenu, réessayer ultérieurement !</h3>';
+                        }
             }
             ?>
         </div>

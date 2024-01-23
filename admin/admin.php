@@ -49,7 +49,7 @@ session_start();
                 $_SESSION['user'] = $user;
                 $_SESSION['passwd'] = $passwd;
                 $_SESSION['level'] = $answer['level'];
-                $_SESSION['id_u'] = $answer['id'];
+                $_SESSION['id_u'] = $answer['id_u'];
                 header('location: post-admin.php');
         }
     } else {
