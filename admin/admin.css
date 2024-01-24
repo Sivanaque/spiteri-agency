@@ -10,6 +10,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+#container-wheight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .body-form {
@@ -125,4 +133,16 @@ a {
 
 .user-container {
     margin-top: 1rem;
+}
+
+select {
+    padding: 0.8em;
+    border: none;
+    margin-right: 5em;
+    margin-top: 1em;
+
+}
+
+.space {
+    margin: 5em;
 }

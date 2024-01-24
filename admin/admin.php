@@ -50,7 +50,7 @@ session_start();
                 $_SESSION['passwd'] = $passwd;
                 $_SESSION['level'] = $answer['level'];
                 $_SESSION['id_u'] = $answer['id_u'];
-                header('location: post-admin.php');
+                header('location: ./post-admin.php');
         }
     } else {
             echo '<h3 style="text-align: center";>Identifiants incorrects.</h3>';

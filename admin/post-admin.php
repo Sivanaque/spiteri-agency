@@ -19,7 +19,7 @@
 <a class="text-brand" href="post-admin.php">Spiteri<span class="color-b">Agency Panel</span></a>
 </div>
 
-
+<a href="../index.php">< Retour</a>
 <h1 class="name">Bienvenue, <?php echo $_SESSION['user']; ?> !</h1>
 <hr style="width: 50%"/>
 <?php
@@ -37,16 +37,11 @@
                 </div>
             </form>
         </div>
-        <div style="border-left:1px solid #000;height:450px;">
-        ';
-    }
-
-?>
-</div>
+        <div style="border-left:1px solid #000;">
         <div id="post-container">      
         <div class="body-form add-ad">
             <h1>Ajouter une annonce</h1><hr>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="des-form">
                     <label for="designation">Adresse : </label>
                     <input type="text" name="address" id="address" required>
@@ -73,12 +68,40 @@
                 </div>
                 <div class="type-form">
                     <label for="type">Image (URL) : </label>
-                    <input type="text" name="img" id="img" required>
+                    <input type="file" name="img" id="img" required>
                 </div>
                 <div class="confirm">
                     <input type="submit" class="submit" name="submit" value="Valider">
                 </div>
             </form>
+        ';
+    } else if ($_SESSION['level'] == 1) {
+        echo '
+        <div id="container">
+        <div class="body-form add-product">
+            <a href="../index.php">< Retour</a>
+            <h1>Envoyer un mail au propriètaire pour une annonce</h1><hr>
+            <form method="post">
+                <div class="des-form">
+                    <label for="designation"> Annonce : </label>
+                    <input type="text" name="user" id="user" required>
+                </div>
+                <div class="prix-form">
+                    <label for="prix">Message : </label>
+                    <input type="password" name="passwd" id="passwd" required>
+                </div>
+                <div class="confirm">
+                        <input type="submit" class="submit" name="submit" value="Valider">
+                </div>
+
+            </form>
+            </div>
+            <div style="border-left:1px solid #000;">
+            ';
+    }
+
+?>
+        
             <?php
             if (isset($_POST['submit'])) {
                 $address = $_POST['address'];
@@ -87,7 +110,14 @@
                 $square = $_POST['square'];
                 $rooms = $_POST['rooms'];
                 $price = $_POST['price'];
-                $img = $_POST['img'];
+                // Traitement de l'image
+                $tmpName = $_FILES['img']['tmp_name'];
+                $name = $_FILES['img']['name'];
+                $size = $_FILES['img']['size'];
+                $error = $_FILES['img']['error'];
+                $img = './upload/'.$name;
+                move_uploaded_file($tmpName, '../upload/'.$name);
+                // fin du traitement de l'image
                 $idu = $_SESSION['id_u'];
 
                         $request = $AgencyDB->prepare('INSERT INTO annonces (address, city, cp, squarem, rooms, price, img, id_u) values (?, ?, ?, ?, ?, ?, ?, ?)');
