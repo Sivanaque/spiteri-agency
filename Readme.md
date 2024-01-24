@@ -10,6 +10,10 @@ You'll find a sql script (in : ```/sql/agence.sql```) to create the database age
 If you would like the plain script, here it is :
 
 ```sql
+CREATE DATABASE IF NOT EXISTS agence;
+use agence;
+
+
 DROP TABLE IF EXISTS `annonces`;
 CREATE TABLE IF NOT EXISTS `annonces` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -60,6 +64,5 @@ INSERT INTO `users` (`id_u`, `name`, `amail`, `passwd`, `level`) VALUES
 
 ALTER TABLE `annonces`
 ADD CONSTRAINT `fk_id` FOREIGN KEY (`id_u`) REFERENCES `users` (`id_u`);
-COMMIT;
 ```
 
