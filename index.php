@@ -135,7 +135,7 @@ require 'db.php';
   </div><!-- End Property Search Section -->>
 
   <!-- ======= Header/Navbar ======= -->
-  <?php require('header.html') ?>
+  <?php require('header.php') ?>
   <!-- End Header/Navbar -->
 
   <!-- ======= Intro Section ======= -->

@@ -114,7 +114,7 @@
   <!-- ======= Header/Navbar ======= -->
 
   <?php
-    require('header.html');
+    require('header.php');
   ?>
   <!-- End Header/Navbar -->
 

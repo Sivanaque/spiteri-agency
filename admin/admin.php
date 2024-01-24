@@ -46,8 +46,8 @@ session_start();
             if ($answer['level'] == 0) {
                 echo '<h3 style="text-align: center";>Vous ne possédez pas les priviléges nécessaires.</h3>';
             } else {
+                $_SESSION['connecte'] = true;
                 $_SESSION['user'] = $user;
-                $_SESSION['passwd'] = $passwd;
                 $_SESSION['level'] = $answer['level'];
                 $_SESSION['id_u'] = $answer['id_u'];
                 header('location: ./post-admin.php');
