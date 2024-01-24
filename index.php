@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 require 'db.php';
+session_start();
 ?>
 
 
@@ -135,7 +136,9 @@ require 'db.php';
   </div><!-- End Property Search Section -->>
 
   <!-- ======= Header/Navbar ======= -->
-  <?php require('header.php') ?>
+  <?php 
+
+  require('header.php') ?>
   <!-- End Header/Navbar -->
 
   <!-- ======= Intro Section ======= -->

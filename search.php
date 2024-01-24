@@ -3,11 +3,27 @@
 ?>
           <?php
 
+          $sql = 'SELECT * from annonces WHERE';
           $city = $_GET['city'];
           $rooms = $_GET['rooms'];
           $squaremin = $_GET['squaremin'];
           $squaremax = $_GET['squaremax'];
           $pricemax = $_GET['pricemax'];
+
+          if (isset($city)) {
+            $sql .= "city = $city";
+          }
+          if (isset($squaremin) && isset($squaremax)) {
+            $sql .= "squarem BETWEEN $squaremin AND $squaremax";
+          }
+          if (isset($rooms)) {
+            $sql .= "rooms = $rooms";
+          }
+          if (isset($pricemax)) {
+            $sql .= "price <= $pricemax";
+          }
+
+          
 
             $request = $AgencyDB->prepare("SELECT * from annonces WHERE city = ? AND squarem
             BETWEEN ? AND ? AND rooms = ? AND price <= ?");

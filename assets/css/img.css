@@ -2,3 +2,8 @@
     height: 500px;
     object-fit: cover;
 }
+
+.custom-height-single {
+    height: 700px;
+    object-fit: cover;
+}

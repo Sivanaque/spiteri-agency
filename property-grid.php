@@ -19,13 +19,13 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="annonce.php?id_a=' . $answer['id'] .'">' . $answer['address'] . '
+                        <span>' . $answer['address'] . '</span>
                           <br /> ' . $answer['cp'] .  '</a>
                       </h2>
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                        <a href=""><span class="price-a">Louer | ' . $answer['price'] . ' € ></span></a>
+                      <a href="advertisment.php?id=' . $answer['id'] .'"><span class="price-a">Louer | ' . $answer['price'] . ' € ></span></a>
                       </div>
                     </div>
                     <div class="card-footer-a">
