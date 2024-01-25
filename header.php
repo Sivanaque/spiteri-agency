@@ -22,7 +22,7 @@
             <?php
                 if(isset($_SESSION['connecte']) && $_SESSION['connecte'] == true)
                 {
-                  echo '<a class="nav-link" name="deconnexion" href="./admin/logout.php">Se déconnecter</a>';
+                  echo '<a class="nav-link" name="deconnexion" href="./admin/logout.php">Se déconnecter</a><i class="fa-solid fa-user fa-lg"></i>';
                 } else {
                   echo '<a class="nav-link" name="connexion" href="./admin/admin.php">Se connecter</a>';
                 }

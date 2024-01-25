@@ -25,7 +25,7 @@
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                      <a href="advertisment.php?id=' . $answer['id'] .'"><span class="price-a">Louer | ' . $answer['price'] . ' € ></span></a>
+                      <a href="advertisment.php?id=' . $answer['id'] . '"><span class="price-a">Louer | ' . $answer['price'] . ' € ></span></a>
                       </div>
                     </div>
                     <div class="card-footer-a">

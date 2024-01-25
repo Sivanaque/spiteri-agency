@@ -30,6 +30,7 @@ session_start();
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/img.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- =======================================================
   * Template Name: EstateAgency
@@ -246,6 +247,7 @@ session_start();
 
             $request = $AgencyDB->query("SELECT * FROM annonces ORDER BY id DESC LIMIT 4");
             while ($answer = $request->fetch()) {
+              var_dump($answer['id']);
               echo '
             
             <div class="carousel-item-b swiper-slide">
@@ -263,11 +265,8 @@ session_start();
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                        <span class="price-a">rent | ' . $answer['price'] . ' €</span>
+                        <a href="advertisment.php?id=' . $answer['id'] . '"><span class="price-a">Louer | ' . $answer['price'] . ' €</span></a>
                       </div>
-                      <a href="property-single.php" class="link-a">Click here to view
-                        <span class="bi bi-chevron-right"></span>
-                      </a>
                     </div>
                     <div class="card-footer-a">
                       <ul class="card-info d-flex justify-content-around">
@@ -290,8 +289,7 @@ session_start();
                 </div>
               </div>
             </div>
-
-            ';
+            ';  
             }
             
             ?>
